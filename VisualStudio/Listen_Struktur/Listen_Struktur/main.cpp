@@ -27,18 +27,37 @@ void insertLast(List& lst, double info) {
 }
 
 void printList(List& lst) {
-	ListElement element = *lst;
+	ListElement * element = lst;
 	std::cout << "[" << "Position" << ", " << "Inhalt" << ", " << "Adresse"<< "]" << std::endl;
 	int pos = 0;
-	while (element.next) {
-		std::cout << "[" << pos << ", "<< element.inhalt << ", " << &element << "]" << std::endl;
-		element = *element.next;
+	while (element->next) { // so lange es einen naechsten gibt
+		std::cout << "[" << pos << ", "<< element->inhalt << ", " << element << "]" << std::endl; // gib ihn aus
+		element = element->next;
+	}
+	std::cout << "[" << pos << ", " << element->inhalt << ", " << element << "]" << std::endl; // Letzte Zeile hat keinen naechsten muss aber auch ausgegeben werden
+}
+
+void recReverse(List& lst, ListElement* anfang,ListElement* element) {
+	if (!element->next)//wenn am ende der Liste
+	{
+		lst = element; // Letztes Element als Start Festlegen
+	}
+	else   {
+		recReverse(lst,anfang, element->next); // Ansonsten weiter die Liste entlang gehen
+		element->next->next = element; // und das .next des folgenden elementes auf das aktuelle element setzen
+	}
+	if (element == anfang) {
+		element->next = 0;
 	}
 }
 
 void reverseList(List& lst) {
-	
+	if (lst) { //Liste darf nicht NULL sein
+		recReverse(lst, lst , lst);
+	}
 }
+
+
 
 
 int main()
