@@ -1,2 +1,2 @@
-# Programmieren 3
+# Prog3
 Repo zum Kurs Programmieren 3
