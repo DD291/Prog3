@@ -1,6 +1,5 @@
 //Aufg_2_2.cpp: Rekursive Datentypen, einfach verkettete Liste
 #include <iostream>
-#include "Liste.h"
 using namespace std;
 
 struct ListElement {
