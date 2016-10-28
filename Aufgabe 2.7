@@ -1,0 +1,118 @@
+//Aufgabe 2.7
+
+
+
+public class variablen {
+	{
+		
+		long tStart = System.nanoTime();
+		
+		//boolean res = sindAnagramme(s1, s2);
+
+		long tEnd = System.nanoTime();
+		
+		System.out.println("Laufzeit: " + (tEnd - tStart)/1e6 + " msec."); }
+	/*		
+   		long tStart = System.nanoTime();
+		boolean res = sindAnagramme(s1, s2);
+		long tEnd = System.nanoTime();
+		System.out.println("Laufzeit: " + (tEnd - tStart)/1e6 + " msec.");
+		
+	}*/
+		
+	 
+	 public static int schleife1 (int n){
+	 
+	for (int i = 0; i < n; i++) {
+		for (int k = n; k > 0; k--) { 	
+		}
+		// Anweisungen mit Aufwand O(1) 
+		}
+	return n;
+	 }
+		
+		// long startTime1 = System.nanoTime();
+
+	//	long estimatedTime1 = System.nanoTime() - startTime1;
+
+	 //  long startTime2 = System.nanoTime();
+	//   System.out.println("Laufzeit für Schleife 1 "+n+" Elemente:");
+	 public static int schleife2 (int n) {
+		 
+	 	for (int i = 0; i < n; i++) { 
+		 for (int j = 0; j <= i; j++) { 
+		 // Anweisungen mit Aufwand O(1) 
+		 }
+	 	} 
+		 return n;
+	 }
+	  // long estimatedTime2 = System.nanoTime() - startTime2;
+
+	 	public static int schleife3(int n) {
+	 for (int i = n; i >= 1; i /= 2) { 
+		 for (int j = 0; j < n; j++) { 
+	 }
+		 // Anweisungen mit Aufwand O(1) 
+		 } 
+	 return n;
+	 	}
+	 
+	 	
+	 	public static void schleife4 (int n){
+	 for (int i = 1; i <= n; i *= 2) { 
+		 for (int k = 0; k < i; k++) { 
+			 // Anweisungen mit Aufwand O(1)
+			 } 
+	 	} 
+		 }
+	
+	 	public static void prog (int n){
+	 		
+	 		long Start1 = System.nanoTime();
+		  	schleife1(n);
+	   		long End1 = System.nanoTime();
+			System.out.println("Laufzeit Schleife1: " + (End1 - Start1)/1e6 + " msec.");
+			
+			long Start2 = System.nanoTime();
+		  	schleife2(n);
+	   		long End2 = System.nanoTime();
+			System.out.println("Laufzeit Schleife2: " + (End2 - Start2)/1e6 + " msec.");
+			
+			long Start3 = System.nanoTime();
+		  	schleife3(n);
+	   		long End3 = System.nanoTime();
+			System.out.println("Laufzeit Schleife3: " + (End3 - Start3)/1e6 + " msec.");
+			
+			long Start4 = System.nanoTime();
+		  	schleife4(n);
+	   		long End4 = System.nanoTime();
+			System.out.println("Laufzeit Schleife4: " + (End4 - Start4)/1e6 + " msec.");
+	 		
+	 	}
+   		
+	  public static void main(String[] args)
+	  {
+		  	int n =10;	
+		  	System.out.println("n =  " + n);
+		  	prog(n);
+		  	n = 100;
+		  	System.out.println("n =  " + n);
+		  	prog(n);
+		  	n = 1000;
+		  	System.out.println("n =  " + n);
+		  	prog(n);
+		  	n = 10000;
+		  	System.out.println("n =  " + n);
+		  	prog(n);
+		  	n = 10000;
+		  	System.out.println("n =  " + n);
+		  	prog(n);
+		 	
+	  }
+
+
+	
+} 
+	 
+
+
